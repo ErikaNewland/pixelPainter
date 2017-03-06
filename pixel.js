@@ -15,9 +15,18 @@ $("#container").append("<div class=grid></div>");
 $(".grid").css("width",gridWidth);
 $(".grid").css("height",gridWidth);
 
+//Getting random numbers for RGB colors
+
 //"Sketch" behavior
 $(".grid").on("mouseover",function(){
-  $(this).css("background-color","black");
+  //$(this).css("background-color","black");
+  var red=Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+  var blue=Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+  var green = Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+  var color="rgb("+red+", "+green+", "+blue+")";
+  $(this).css("background-color", color);
+
+  });
 });
 
 //Clear button resets the grid
@@ -32,21 +41,19 @@ $("button").on("click",function(){
       $("#container").append("<div class=grid></div>");
       }
     //Calculate the new gride spects
-    gridWidth = Math.floor(480/oneRow);
+    gridWidth = (480/oneRow);
     //Size the new grid
     $(".grid").css("width",gridWidth);
     $(".grid").css("height",gridWidth);
     //"Sketch" behavior
     $(".grid").on("mouseover",function(){
-    $(this).css("background-color","black");
+    //$(this).css("background-color","black");
+    var red=Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+    var blue=Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+    var green = Math.floor(Math.random() * (Math.floor(255) -Math.ceil(0)));
+    var color="rgb("+red+", "+green+", "+blue+")";
+    $(this).css("background-color", color);
   });
 
 
   });
-
-
-
-
-
-
-});
